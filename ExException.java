@@ -287,17 +287,20 @@ public class ExException {
               index(number , string);
            }
              catch (java.util.InputMismatchException e){
-             System.out.println("invalid input ,, please enter index number ! ");
-           }
-           catch (RuntimeException e){
+             System.out.println("invalid input! please enter index number ! ");
+           } 
+           catch (StringIndexOutOfBoundsException e){
                System.out.println(e.getMessage());
            }
-              }
-              public  static  void index(int n , String str) throws RuntimeException {
+           catch (java.lang.Exception e){
+               System.out.println(" UnExpected Error ! ");
+           }
+             }
+              public  static  void index(int n , String str) throws StringIndexOutOfBoundsException  {
                   if ( n < 0 || n > str.length() ){
-                      throw new RuntimeException(" invalid !! the index must be betewwn Zero and lenght of String ");
+              throw new StringIndexOutOfBoundsException("invalid !! the index must be betewwn Zero and lenght of String ");
               }
-}  */
+} */
 
 
 
